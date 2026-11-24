@@ -1,82 +1,114 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<meta name="theme-color" content="#81569e">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Merge Hotel">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>Merge Hotel — Infinite Edition</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#172b35"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest"><title>Merge Hotel — Infinite</title>
 <style>
-:root{color-scheme:light;--ink:#533c31;--purple:#81569e;--lav:#b88ac6;--gold:#f1c36b;--board:#858bb9;--cell:#abb3d8}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f4e9f5,#f7eee4 45%,#eee6f4);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);padding:env(safe-area-inset-top) 12px env(safe-area-inset-bottom);min-height:100vh}
-.app{max-width:560px;margin:auto;padding:12px 0 24px}.top{background:linear-gradient(125deg,#754c9b,#b27bc1);color:white;border-radius:19px;padding:16px;box-shadow:0 6px 18px #68478330}
-.topline,.between{display:flex;justify-content:space-between;align-items:center;gap:8px}.brand{font-size:25px;font-weight:900}.sub{font-size:11px;opacity:.8;letter-spacing:1.5px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px}.stat{background:#fff9ef;color:#79513a;border-radius:12px;padding:8px 3px;text-align:center;font-weight:800;font-size:14px}.stat small{display:block;font-weight:500;font-size:10px}
-.panel{background:#fffdf9eF;border:1px solid #e7d9e8;border-radius:16px;padding:12px;margin-top:12px;box-shadow:0 3px 12px #60466a0c}.section{font-weight:850;font-size:15px;margin-bottom:9px}.muted{color:#927e8e;font-size:11px}.progress{height:7px;background:#eadde8;border-radius:20px;overflow:hidden;margin-top:8px}.progress>div{height:100%;background:linear-gradient(90deg,#efc16c,#bd8bc5);width:0}
-.guests{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.guest{background:linear-gradient(145deg,#fff8ee,#f1dfd0);border:2px solid #dfc3a7;border-radius:13px;padding:8px 5px;text-align:center;min-width:0}.avatar{font-size:37px;line-height:1.1}.gname{font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reward{background:#7954a2;color:white;border-radius:7px;padding:4px;font-size:10px;font-weight:800;margin-top:5px}.request{background:white;border-radius:8px;font-size:25px;margin-top:7px;padding:3px}.itemname{font-size:10px;font-weight:750;margin-top:4px;min-height:24px}.deliver{border:0;border-radius:8px;background:#d7eea7;color:#48652e;font-weight:850;font-size:11px;padding:8px 2px;width:100%;margin-top:5px}
-.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;background:var(--board);border:3px solid #8b91bb;border-radius:13px;padding:5px}.cell{aspect-ratio:1;background:linear-gradient(145deg,#c0c7e3,#929dc9);border:1px solid #828bb9;border-radius:7px;display:flex;align-items:center;justify-content:center;position:relative;font-size:clamp(25px,8vw,39px);min-width:0;touch-action:manipulation}.cell.selected{background:#b4ed76;outline:3px solid #eaffae;z-index:1}.cell small{position:absolute;right:2px;bottom:0;font-size:9px;color:#3c4774;font-weight:900}
-.producerbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;background:#777fae;padding:7px;border-radius:10px;margin-top:5px}.producer{background:linear-gradient(145deg,#fff4e6,#e9d4bd);color:#684b37;border:2px solid #d5b38f;border-radius:9px;padding:8px 1px 6px;font-weight:800;min-width:0}.producer span{display:block;font-size:25px}.producer small{font-size:10px}
-button{font:inherit;cursor:pointer;touch-action:manipulation}button:active{transform:scale(.96)}.action{border:0;background:#f5e7d7;color:#79503b;border-radius:10px;padding:10px 12px;font-weight:850}.toggle.on{background:#e6b14e;color:#573c20}.message{font-size:12px;color:#927e8e;min-height:19px;margin-top:9px}.room{background:linear-gradient(130deg,#e9d4bd,#b89575);color:#563d2d;border-radius:13px;padding:13px}.roomicon{font-size:43px}.roombtn{width:100%;margin-top:10px;background:white;color:#704c35;border:0;border-radius:9px;padding:10px;font-weight:850}.footer{display:flex;justify-content:space-between;font-size:11px;color:#927e8e;margin:13px 3px}.installhint{background:#fff7df;border:1px solid #eed69c;border-radius:12px;padding:10px;font-size:12px;line-height:1.4;margin-top:12px}
-@media(min-width:500px){.app{padding-top:20px}.cell{font-size:36px}}
-</style>
-</head>
-<body>
-<main class="app">
-<header class="top"><div class="topline"><div><div class="sub">GRAND HOTEL</div><div class="brand">🏨 Merge Hotel</div><div class="sub">INFINITE EDITION</div></div><div style="font-size:48px">🏩</div></div>
-<div class="stats"><div class="stat">⚡ ∞<small>Энергия</small></div><div class="stat">🪙 ∞<small>Монеты</small></div><div class="stat">💎 ∞<small>Алмазы</small></div></div></header>
-<section class="panel"><div class="between"><b>⭐ Развитие отеля</b><b id="level">Уровень 1</b></div><div class="progress"><div id="progress"></div></div><div class="between muted" style="margin-top:5px"><span>Опыт</span><span id="xp">0 / 5</span></div></section>
-<section><div class="section" style="margin:13px 2px 8px">👥 Заказы гостей</div><div class="guests" id="guests"></div></section>
-<section class="panel"><div class="between"><b class="section" style="margin:0">🧩 Игровое поле</b><span class="muted">5 × 7 · 35 клеток</span></div><div class="board" id="board" style="margin-top:9px"></div>
-<div style="text-align:center;background:#777fae;color:white;border-radius:6px;font-size:10px;font-weight:900;padding:5px;margin-top:5px">＋ СОЗДАНИЕ ПРЕДМЕТОВ ＋</div>
-<div class="producerbar"><button class="producer" data-cat="0"><span>🍞</span><small>Еда</small></button><button class="producer" data-cat="1"><span>👗</span><small>Одежда</small></button><button class="producer" data-cat="2"><span>🧃</span><small>Напитки</small></button><button class="producer" data-cat="3"><span>🪴</span><small>Декор</small></button><button class="producer" data-cat="4"><span>🧹</span><small>Уборка</small></button></div>
-<div style="text-align:center;background:#f5eff7;border-radius:9px;padding:9px;margin-top:9px"><b id="detail">Нажми на любой предмет</b><div class="muted" id="detaildesc">Выбери предмет для просмотра информации</div></div>
-<div class="between" style="margin-top:10px"><div><b>⚡ Объединение 2X</b><div class="muted">Сразу +2 уровня</div></div><button id="double" class="action">2X OFF</button></div><div class="message" id="message" aria-live="polite">Выбери два одинаковых предмета!</div><button id="clear" class="action" style="width:100%">Сбросить выбор</button></section>
-<section class="panel"><b>🏨 Обустройство номера</b><div class="room" style="margin-top:9px"><div class="between"><div><div class="sub" style="color:#654b39;opacity:1">ТВОЙ НОМЕР</div><b id="roomname" style="font-size:21px">Старый номер</b></div><div class="roomicon" id="roomicon">🛏️</div></div><div id="roomdesc" class="muted" style="color:#684b37">Начни преображение отеля!</div><button id="upgrade" class="roombtn">Обновить номер ✨</button></div></section>
-<div class="footer"><span>💾 Автосохранение</span><button id="reset" style="border:0;background:none;text-decoration:underline;color:inherit">Начать заново</button></div>
-<div class="installhint" id="installhint"><b>📲 Установка на iPhone</b><br>После публикации игры на HTTPS-сайте открой её в Safari, нажми «Поделиться» → «На экран Домой».</div>
+:root{--ink:#172b35;--muted:#71818a;--cream:#f6f1e7;--paper:#fffdf8;--gold:#e8b85b;--teal:#5caaa0;--line:#e8e1d5;--pink:#e9a5a0}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#e9e4da;color:var(--ink);font-family:Inter,ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif}body{padding-bottom:env(safe-area-inset-bottom)}
+button{font:inherit;border:0;cursor:pointer;color:inherit}button:focus-visible{outline:3px solid #5caaa0;outline-offset:2px}
+.app{max-width:520px;min-height:100dvh;margin:auto;background:var(--cream);position:relative;overflow:hidden;box-shadow:0 0 40px #1c30301a}
+.top{background:var(--ink);color:white;padding:calc(14px + env(safe-area-inset-top)) 16px 15px;border-radius:0 0 22px 22px}
+.brandrow{display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.08em;font-size:15px}.subbrand{font-size:10px;color:#c3d0d1;letter-spacing:.18em;margin-top:2px}
+.resources{display:flex;gap:7px;margin-top:15px}.resource{background:#ffffff16;border:1px solid #ffffff20;border-radius:12px;padding:7px 10px;display:flex;gap:6px;align-items:center;font-size:13px;font-weight:800;flex:1;justify-content:center}
+.level-pill{font-size:11px;color:#f7d58e;background:#ffffff12;border:1px solid #ffffff25;padding:7px 10px;border-radius:99px}
+main{padding:14px 13px 100px}.page{display:none}.page.active{display:block}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:5px 2px 11px}.eyebrow{font-size:10px;letter-spacing:.16em;color:var(--muted);font-weight:900;text-transform:uppercase}.heading{font-size:21px;font-weight:900;letter-spacing:-.04em;margin-top:2px}.smallbtn{background:#fff;border:1px solid var(--line);padding:8px 11px;border-radius:10px;font-size:11px;font-weight:800}
+.order-strip{display:flex;gap:9px;overflow-x:auto;padding:2px 1px 12px;scrollbar-width:none}.order{min-width:142px;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:10px;box-shadow:0 3px 10px #263b3510}.order.done{opacity:.55}.guest{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800}.avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#f5dfbd;font-size:17px}.need{display:flex;align-items:center;justify-content:space-between;margin:9px 0 7px}.needicon{font-size:27px}.needname{font-size:10px;color:var(--muted);font-weight:700}.progress{height:5px;background:#eee8dd;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;background:var(--teal);border-radius:9px}.reward{font-size:10px;font-weight:900;margin-top:7px;color:#9b722b}
+.board-wrap{background:#e7dfd1;border:1px solid #d9cfbf;border-radius:19px;padding:8px;box-shadow:inset 0 2px 4px #fff8,0 5px 14px #253b3510}
+.board{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;touch-action:manipulation}
+.cell{aspect-ratio:1;min-width:0;border-radius:10px;background:#f6f0e5;border:1px solid #d8cdbb;display:grid;place-items:center;position:relative;box-shadow:inset 0 1px 1px #fff9}
+.cell.selected{outline:3px solid var(--teal);outline-offset:-2px;background:#e1f0e9}.cell .emoji{font-size:clamp(20px,6vw,30px);line-height:1;filter:drop-shadow(0 2px 1px #0001)}.cell .lv{position:absolute;bottom:3px;right:4px;font-size:8px;font-weight:900;color:#7b776f;background:#fff9;padding:1px 3px;border-radius:5px}.cell .spark{position:absolute;top:2px;left:3px;font-size:9px}.cell.empty{background:#e1d8c9;border-style:dashed;box-shadow:none}.cell.generator{background:#dcebe4;border-color:#a9c9bb}
+.board-tools{display:flex;gap:8px;margin-top:9px}.tool{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 6px;font-size:11px;font-weight:900}.tool:disabled{opacity:.4}
+.energyline{display:flex;justify-content:space-between;align-items:center;margin:13px 2px 7px;font-size:11px;font-weight:800}.energybar{height:7px;background:#e1d9cd;border-radius:10px;overflow:hidden;flex:1;margin:0 10px}.energybar i{display:block;height:100%;background:linear-gradient(90deg,#e8b85b,#f1d48d)}
+.hint{font-size:10px;color:var(--muted);text-align:center;margin:9px 0 0}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);background:#fffdf8ee;backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:9px 12px calc(9px + env(safe-area-inset-bottom));z-index:10}
+.nav{background:transparent;color:#899397;font-size:10px;font-weight:900;display:grid;gap:3px;justify-items:center}.nav b{font-size:21px}.nav.active{color:var(--ink)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:14px;margin-bottom:11px}.roomhero{height:190px;border-radius:15px;background:linear-gradient(145deg,#c5ddd3,#f4d9ad 58%,#d8a9a1);position:relative;overflow:hidden;display:grid;place-items:center}.roomhero:before{content:"";position:absolute;inset:18px 24px 0;background:linear-gradient(90deg,#fff7 49%,transparent 50%),linear-gradient(#fff9 0 0);border:8px solid #fff8;border-bottom:0;border-radius:12px 12px 0 0}.roomemoji{font-size:76px;z-index:1;filter:drop-shadow(0 5px 2px #6c655533)}.roomlabel{position:absolute;bottom:10px;left:12px;background:#172b35dc;color:#fff;padding:7px 10px;border-radius:9px;font-size:11px;font-weight:900;z-index:2}
+.progressrow{display:flex;justify-content:space-between;font-size:11px;font-weight:800;margin:12px 0 6px}.widebar{height:9px;background:#ece5da;border-radius:9px;overflow:hidden}.widebar i{display:block;height:100%;background:var(--teal)}
+.task{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}.task:last-child{border:0}.taskicon{width:43px;height:43px;border-radius:13px;background:#f1eadf;display:grid;place-items:center;font-size:24px}.tasktext{flex:1}.tasktext strong{font-size:12px}.tasktext small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.pricebtn{background:var(--ink);color:white;padding:9px 11px;border-radius:10px;font-size:10px;font-weight:900}.pricebtn:disabled{opacity:.4}
+.collection{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.collect{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:10px 4px;text-align:center}.collect .big{font-size:28px}.collect small{display:block;color:var(--muted);font-size:9px;font-weight:800;margin-top:4px}
+.modalback{position:fixed;inset:0;background:#14232db3;display:none;align-items:center;justify-content:center;padding:24px;z-index:30}.modalback.show{display:flex}.modal{width:100%;max-width:360px;background:var(--paper);border-radius:20px;padding:21px;text-align:center;box-shadow:0 20px 70px #0004}.modal .big{font-size:48px}.modal h2{margin:7px 0;font-size:20px}.modal p{font-size:12px;color:var(--muted);line-height:1.5}.primary{background:var(--ink);color:#fff;border-radius:12px;padding:12px 18px;font-weight:900;width:100%;margin-top:8px}.secondary{background:#eee7dc;border-radius:12px;padding:11px 18px;font-weight:900;width:100%;margin-top:7px}
+.toast{position:fixed;top:calc(105px + env(safe-area-inset-top));left:50%;transform:translate(-50%,-10px);opacity:0;pointer-events:none;background:var(--ink);color:white;padding:10px 15px;border-radius:99px;font-size:12px;font-weight:800;z-index:40;transition:.2s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:520px){main{padding-left:18px;padding-right:18px}.board{gap:7px}.cell{border-radius:12px}}
+</style></head>
+<body><div class="app">
+<header class="top"><div class="brandrow"><div><div class="brand">MERGE HOTEL</div><div class="subbrand">THE GRAND REOPENING</div></div><div class="level-pill" id="level">HOTEL • LVL 1</div></div>
+<div class="resources"><div class="resource">⚡ <span id="energy">100</span></div><div class="resource">🪙 <span id="coins">250</span></div><div class="resource">💎 <span id="gems">20</span></div></div></header>
+<main>
+<section class="page active" id="page-board">
+<div class="section-head"><div><div class="eyebrow">YOUR NEXT GUESTS</div><div class="heading">Заказы</div></div><button class="smallbtn" id="refreshOrders">↻ Обновить</button></div>
+<div class="order-strip" id="orders"></div>
+<div class="section-head"><div><div class="eyebrow">MERGE & DISCOVER</div><div class="heading">Игровое поле</div></div><button class="smallbtn" id="sortBtn">✦ Подсказка</button></div>
+<div class="board-wrap"><div class="board" id="board"></div></div>
+<div class="energyline"><span>⚡ Энергия</span><div class="energybar"><i id="energyFill" style="width:100%"></i></div><span id="energyText">100/100</span></div>
+<div class="board-tools"><button class="tool" id="generateBtn">＋ Создать предмет · 1⚡</button><button class="tool" id="sellBtn">Продать предмет</button><button class="tool" id="storeBtn">Хранилище</button></div>
+<p class="hint">Нажми на генератор, чтобы получить предмет. Перетащи одинаковые предметы друг на друга.</p>
+</section>
+<section class="page" id="page-hotel">
+<div class="section-head"><div><div class="eyebrow">MAKE IT BEAUTIFUL</div><div class="heading">Мой отель</div></div><span class="level-pill" style="background:#f0e4cb;color:#8b6729;border-color:#e7d5b5" id="hotelLevel">1 этаж</span></div>
+<div class="card"><div class="roomhero"><div class="roomemoji" id="roomEmoji">🛎️</div><div class="roomlabel" id="roomName">Лобби «Гранд»</div></div><div class="progressrow"><span>Реконструкция</span><span id="roomProgress">0%</span></div><div class="widebar"><i id="roomFill" style="width:0%"></i></div><p style="font-size:11px;color:var(--muted);line-height:1.5">Выполняй заказы гостей, зарабатывай монеты и возвращай отелю его былую роскошь.</p></div>
+<div class="card"><div class="eyebrow">ПЛАН РЕСТАВРАЦИИ</div><div id="tasks"></div></div>
+</section>
+<section class="page" id="page-collection">
+<div class="section-head"><div><div class="eyebrow">DISCOVER EVERY ITEM</div><div class="heading">Коллекция</div></div><span class="level-pill" style="background:#f0e4cb;color:#8b6729;border-color:#e7d5b5" id="collectionCount">0 открыто</span></div>
+<div class="card"><div class="eyebrow" style="margin-bottom:10px">ЦЕПОЧКИ ПРЕДМЕТОВ</div><div id="chains"></div></div>
+</section>
 </main>
+<nav class="bottom"><button class="nav active" data-page="board"><b>🧩</b>СЛИЯНИЕ</button><button class="nav" data-page="hotel"><b>🏨</b>ОТЕЛЬ</button><button class="nav" data-page="collection"><b>📚</b>КОЛЛЕКЦИЯ</button></nav>
+<div class="modalback" id="modal"><div class="modal"><div class="big" id="modalIcon">✨</div><h2 id="modalTitle">Готово!</h2><p id="modalText"></p><button class="primary" id="modalOk">Продолжить</button></div></div><div class="toast" id="toast"></div>
+</div>
 <script>
 (()=>{
+const W=7,H=7,N=W*H,MAX_ENERGY=100;
 const chains=[
-{name:'Еда',items:[['🍞','Хлеб'],['🥐','Булочка'],['🧀','Сыр'],['🥪','Сэндвич'],['🥯','Бейгл'],['🍕','Пицца'],['🍔','Бургер'],['🍱','Обед'],['🍰','Торт'],['👨‍🍳','Шеф-повар']]},
-{name:'Одежда',items:[['👕','Футболка'],['🩳','Шорты'],['🧣','Шарф'],['👗','Платье'],['👒','Шляпа'],['👚','Блузка'],['👠','Туфли'],['🧥','Пальто'],['💍','Украшение'],['👑','Королевский наряд']]},
-{name:'Напитки',items:[['🧃','Сок'],['☕','Кофе'],['🍵','Чай'],['🥤','Лимонад'],['🧋','Бабл-ти'],['🍹','Коктейль'],['🍸','Фирменный напиток'],['🍶','Авторский напиток'],['🍾','Напиток люкс'],['🏆','Премиальный напиток']]},
-{name:'Декор',items:[['🌱','Росток'],['🌷','Цветок'],['💐','Букет'],['🪴','Растение'],['🖼️','Картина'],['🪞','Зеркало'],['💡','Лампа'],['🛋️','Диван'],['🛏️','Кровать'],['👑','Королевский интерьер']]},
-{name:'Уборка',items:[['🧽','Губка'],['🧹','Щётка'],['🪣','Ведро'],['🧴','Средство'],['🧼','Мыло'],['🧺','Корзина'],['🚿','Душ'],['🛁','Ванна'],['✨','Чистый номер'],['🌟','Идеальная чистота']]}
+ {id:'kitchen',name:'Кухня',icon:'🥐',items:['🍞','🥖','🥐','🥯','🧇','🥞','🍳','🥪','🥗','🍜','🍝','🍣','🍱','🍰','🎂','🧁','🍮','🍩','🍪','👨‍🍳']},
+ {id:'service',name:'Сервис',icon:'🧹',items:['🧽','🧴','🧼','🪣','🧹','🧺','🧻','🧯','🧰','🧤','🧳','🛎️','🔔','🛏️','🛋️','🪞','🪴','🖼️','🗝️','👑']},
+ {id:'garden',name:'Сад',icon:'🌱',items:['🌱','🌿','🍀','🌷','🌼','🌻','🪻','🌹','🪴','🌳','🌴','🪵','🪨','⛲','🦋','🐝','🕊️','🦚','🏵️','🌺']},
+ {id:'bar',name:'Бар',icon:'☕',items:['💧','🥛','🫖','☕','🧋','🥤','🧃','🍵','🧉','🍹','🍸','🥂','🍷','🍾','🧊','🍋','🍓','🍍','🍒','🍹']},
+ {id:'fashion',name:'Гардероб',icon:'🧥',items:['🧦','👕','👔','🧣','🧤','👗','👖','👚','🧥','🥼','👒','👜','👠','👞','🕶️','💍','⌚','👑','💎','✨']}
 ];
-const people=[['👵🏻','Элеонора'],['👨🏻‍🦳','Генри'],['👨🏼','Максим'],['👩🏻','София'],['👨🏽','Алекс'],['👩🏼‍🦰','Виктория']];
-const rooms=[['🛏️','Старый номер','Начни ремонт!'],['🪑','Уютный номер','Стало намного уютнее'],['🪟','Светлый номер','Новый интерьер'],['🛋️','Комфортный люкс','Комфорт для гостей'],['🌷','Бутик-номер','Особенный стиль'],['👑','Королевский люкс','Роскошный номер!']];
-const get=id=>id?{cat:Math.floor((id-1)/10),lv:(id-1)%10,emoji:chains[Math.floor((id-1)/10)].items[(id-1)%10][0],name:chains[Math.floor((id-1)/10)].items[(id-1)%10][1]}:null;
-let board=Array(35).fill(0),selected=-1,detail=0,double=false,level=1,xp=0,room=0,orders=[];
-const $=id=>document.getElementById(id),say=s=>$('message').textContent=s;
-function save(){try{localStorage.setItem('mergeHotelPWA',JSON.stringify({board,level,xp,room,orders,double}))}catch(e){}}
-function newOrder(){let cat=Math.floor(Math.random()*5),lv=Math.floor(Math.random()*Math.min(4,Math.max(2,level+1)));return{id:cat*10+lv+1,reward:120+lv*130,guest:Math.floor(Math.random()*people.length)}}
-function setup(){while(orders.length<3)orders.push(newOrder())}
-function gain(n){xp+=n;while(xp>=level*5){xp-=level*5;level++;say('⭐ Новый уровень отеля: '+level+'!')}}
+const guests=[['👩🏻','Мисс Эмма'],['🧔🏻','Мистер Браун'],['👵🏻','Мадам Роуз'],['👨🏽','Шеф Марко'],['👩🏽','Мисс Лили'],['🧑🏻','Алекс']];
+const $=id=>document.getElementById(id);
+let state={energy:100,coins:250,gems:20,xp:0,room:0,board:Array(N).fill(null),orders:[],unlocked:{},selected:null,dragFrom:null,genCharges:5,genCooldown:0};
+const rooms=[{name:'Лобби «Гранд»',icon:'🛎️',tasks:[['🪑','Реставрировать стойку ресепшена',80],['🪟','Заменить витражи',120],['🛋️','Обновить зону отдыха',160],['🌿','Озеленить лобби',200]]},{name:'Королевский номер',icon:'🛏️',tasks:[['🛏️','Поставить кровать',180],['🪞','Добавить зеркало',220],['🛁','Обновить ванную',260],['🖼️','Повесить картину',300]]},{name:'Зимний сад',icon:'🌳',tasks:[['🌱','Посадить растения',250],['⛲','Установить фонтан',320],['🪴','Расставить кашпо',380],['🦚','Открыть павильон',450]]}];
+function save(){localStorage.setItem('mergeHotelInfinite',JSON.stringify(state))}
+function load(){try{let s=JSON.parse(localStorage.getItem('mergeHotelInfinite'));if(s&&Array.isArray(s.board)&&s.board.length===N)state={...state,...s}}catch(e){}}
+function item(chain,level){return {type:'item',chain,level}}
+function randomChain(){return chains[Math.floor(Math.random()*chains.length)].id}
+function iconFor(obj){if(!obj)return '';if(obj.type==='gen')return '🎁';let c=chains.find(x=>x.id===obj.chain);return c?.items[Math.min(obj.level-1,c.items.length-1)]||'✨'}
+function labelFor(obj){if(!obj)return '';let c=chains.find(x=>x.id===obj.chain);return c.name+' · ур. '+obj.level}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1500)}
+function emptyIndex(){return state.board.findIndex(x=>!x)}
+function addRandom(){let i=emptyIndex();if(i<0){toast('Нет свободных клеток');return false}state.board[i]=item(randomChain(),1);return true}
+function newOrders(){state.orders=[];for(let i=0;i<3;i++){let c=chains[Math.floor(Math.random()*chains.length)],level=2+Math.floor(Math.random()*4);state.orders.push({guest:guests[Math.floor(Math.random()*guests.length)],chain:c.id,level,coins:35+level*18,done:false})}}
 function render(){
- $('level').textContent='Уровень '+level;$('xp').textContent=xp+' / '+level*5;$('progress').style.width=Math.min(100,xp/(level*5)*100)+'%';
- $('double').textContent=double?'2X ON':'2X OFF';$('double').classList.toggle('on',double);
- $('guests').innerHTML='';
- orders.forEach((o,i)=>{let item=get(o.id),p=people[o.guest],c=document.createElement('div');c.className='guest';let av=document.createElement('div');av.className='avatar';av.textContent=p[0];let nm=document.createElement('div');nm.className='gname';nm.textContent=p[1];let rw=document.createElement('div');rw.className='reward';rw.textContent='🪙 '+o.reward;let req=document.createElement('div');req.className='request';req.textContent=item.emoji;let itn=document.createElement('div');itn.className='itemname';itn.textContent=item.name;let btn=document.createElement('button');btn.className='deliver';btn.textContent='Сдать ✓';btn.onclick=()=>deliver(i);c.append(av,nm,rw,req,itn,btn);$('guests').append(c)});
- $('board').innerHTML='';board.forEach((v,i)=>{let b=document.createElement('button');b.className='cell'+(selected===i?' selected':'');if(v){b.textContent=get(v).emoji;let sm=document.createElement('small');sm.textContent=get(v).lv+1;b.append(sm)}b.onclick=()=>tap(i);$('board').append(b)});
- if(detail){let d=get(detail);$('detail').textContent=d.emoji+' '+d.name;$('detaildesc').textContent=chains[d.cat].name+' · Уровень '+(d.lv+1)}else{$('detail').textContent='Нажми на любой предмет';$('detaildesc').textContent='Выбери предмет для просмотра информации'}
- $('roomname').textContent=rooms[room][1];$('roomicon').textContent=rooms[room][0];$('roomdesc').textContent=rooms[room][2];$('upgrade').textContent=room===5?'Максимальный уровень':'Обновить номер ✨';
+ $('energy').textContent=state.energy;$('coins').textContent=state.coins;$('gems').textContent=state.gems;$('level').textContent='HOTEL • LVL '+(1+Math.floor(state.xp/250));
+ $('energyText').textContent=state.energy+'/100';$('energyFill').style.width=state.energy+'%';
+ $('board').innerHTML='';state.board.forEach((obj,i)=>{let el=document.createElement('button');el.className='cell '+(!obj?'empty':'')+(obj?.type==='gen'?' generator':'')+(state.selected===i?' selected':'');el.innerHTML=obj?`<span class="emoji">${iconFor(obj)}</span><span class="lv">${obj.type==='gen'?'+' : 'L'+obj.level}</span>${obj.level>=8&&obj.type==='item'?'<span class="spark">✦</span>':''}`:'';el.setAttribute('aria-label',obj?labelFor(obj):'Пустая клетка');el.onclick=()=>tapCell(i);el.ondragstart=e=>{state.dragFrom=i;e.dataTransfer.setData('text/plain',String(i));};el.draggable=!!obj;el.ondragover=e=>e.preventDefault();el.ondrop=e=>{e.preventDefault();let from=Number(e.dataTransfer.getData('text/plain'));merge(from,i)};el.addEventListener('touchstart',()=>{state.dragFrom=i},{passive:true});el.addEventListener('touchend',e=>{let t=e.changedTouches[0],target=document.elementFromPoint(t.clientX,t.clientY)?.closest('.cell');if(target){let to=[...$('board').children].indexOf(target);if(to>=0&&to!==i)merge(i,to)}},{passive:true});$('board').appendChild(el)});
+ $('orders').innerHTML='';state.orders.forEach((o,i)=>{let c=chains.find(x=>x.id===o.chain),el=document.createElement('div');el.className='order '+(o.done?'done':'');el.innerHTML=`<div class="guest"><span class="avatar">${o.guest[0]}</span>${o.guest[1]}</div><div class="need"><div><div class="needname">${c.name} · уровень ${o.level}</div><div style="font-size:11px;font-weight:900">${o.done?'Заказ выполнен':'Нужен предмет'}</div></div><span class="needicon">${c.items[o.level-1]}</span></div><div class="progress"><i style="width:${o.done?100:0}%"></i></div><div class="reward">🪙 Награда: ${o.coins}</div>`;$('orders').appendChild(el)});
+ let room=rooms[Math.min(state.room,rooms.length-1)],tasks=room.tasks;$('roomName').textContent=room.name;$('roomEmoji').textContent=room.icon;$('hotelLevel').textContent=(state.room+1)+' зона';let pct=Math.round((state.room>=rooms.length?1:state.xp%250/250)*100);$('roomProgress').textContent=pct+'%';$('roomFill').style.width=pct+'%';
+ $('tasks').innerHTML=tasks.map((t,i)=>`<div class="task"><div class="taskicon">${t[0]}</div><div class="tasktext"><strong>${t[1]}</strong><small>Награда за прогресс отеля</small></div><button class="pricebtn" data-task="${i}" ${state.coins<t[2]?'disabled':''}>🪙 ${t[2]}</button></div>`).join('');
+ $('tasks').querySelectorAll('[data-task]').forEach(b=>b.onclick=()=>buyTask(Number(b.dataset.task)));
+ renderCollection();save();
 }
-function spawn(cat){let i=board.indexOf(0);if(i<0){say('Поле заполнено! Освободи клетку.');return}board[i]=cat*10+1;selected=-1;detail=board[i];save();render();say('Добавлено: '+get(board[i]).name+'!')}
-function tap(i){if(!board[i]){selected=-1;render();return}if(selected<0){selected=i;detail=board[i];render();return}if(selected===i){selected=-1;render();return}let a=selected,b=i,x=get(board[a]),y=get(board[b]);if(x.cat===y.cat&&x.lv===y.lv){let next=x.lv+(double?2:1);if(next>=10){say('Максимальный уровень!');selected=-1;render();return}board[a]=x.cat*10+next+1;board[b]=0;selected=-1;detail=board[a];gain(1);save();render();say('✨ '+x.name+' → '+get(board[a]).name+'!')}else{selected=i;detail=board[i];render();say('Нужны два одинаковых предмета!')}}
-function deliver(i){let o=orders[i],idx=board.indexOf(o.id);if(idx<0){say('Сначала собери '+get(o.id).name+' на поле!');return}board[idx]=0;gain(2);orders[i]=newOrder();selected=-1;detail=0;save();render();say('🎉 Заказ выполнен! Гость доволен!')}
-document.querySelectorAll('#merge-hotel-iphone [data-cat]').forEach(()=>{});
-document.querySelectorAll('#gh57 [data-cat]').forEach(()=>{});
-document.querySelectorAll('.producer[data-cat]').forEach(b=>b.addEventListener('click',()=>spawn(Number(b.dataset.cat))));
-$('double').onclick=()=>{double=!double;save();render();say(double?'⚡ 2X включён!':'Обычный режим включён')};
-$('clear').onclick=()=>{selected=-1;render();say('Выбор сброшен')};
-$('upgrade').onclick=()=>{if(room>=5){say('Номер полностью обновлён!');return}room++;level=Math.max(level,room+1);save();render();say('🎊 Номер обновлён!')};
-$('reset').onclick=()=>{if(!confirm('Начать игру заново?'))return;board=Array(35).fill(0);selected=-1;detail=0;double=false;level=1;xp=0;room=0;orders=[];setup();save();render();say('Новый отель ждёт гостей!')};
-try{let d=JSON.parse(localStorage.getItem('mergeHotelPWA'));if(d&&Array.isArray(d.board)){board=d.board.slice(0,35).map(v=>get(v)?v:0);while(board.length<35)board.push(0);level=d.level||1;xp=d.xp||0;room=Math.min(5,d.room||0);orders=Array.isArray(d.orders)?d.orders.filter(o=>get(o.id)&&people[o.guest]):[];double=!!d.double}}catch(e){}
-setup();render();save();
+function tapCell(i){let obj=state.board[i];if(!obj){if(state.selected!==null){state.selected=null;render()}return}if(obj.type==='gen'){generateFrom(i);return}if(state.selected===null){state.selected=i;render();return}if(state.selected===i){state.selected=null;render();return}merge(state.selected,i)}
+function merge(a,b){if(a===b||!state.board[a]||!state.board[b])return;let x=state.board[a],y=state.board[b];if(x.type==='item'&&y.type==='item'&&x.chain===y.chain&&x.level===y.level){state.board[b]=item(x.chain,Math.min(20,x.level+1));state.board[a]=null;state.unlocked[x.chain+':'+(x.level+1)]=true;state.xp+=2;state.selected=null;toast('Объединение! '+iconFor(state.board[b]));render();checkOrders();return}state.selected=b;toast('Нужны два одинаковых предмета');render()}
+function generateFrom(i){if(state.energy<=0){toast('Энергия закончилась');return}let free=emptyIndex();if(free<0){toast('Освободи место на поле');return}state.energy--;let c=randomChain();state.board[free]=item(c,1);state.genCharges--;if(state.genCharges<=0){state.genCharges=5;toast('Генератор перезарядился')}render()}
+function checkOrders(){for(let o of state.orders){if(o.done)continue;let idx=state.board.findIndex(x=>x&&x.type==='item'&&x.chain===o.chain&&x.level>=o.level);if(idx>=0){state.board[idx]=null;o.done=true;state.coins+=o.coins;state.xp+=25;toast('Заказ выполнен! +'+o.coins+' монет');break}}render()}
+function buyTask(i){let room=rooms[Math.min(state.room,rooms.length-1)],t=room.tasks[i];if(state.coins<t[2])return;state.coins-=t[2];state.xp+=50;toast('Отель стал красивее!');if(state.xp>=250*(state.room+1)&&state.room<rooms.length-1){state.room++;showModal('🎉','Новая зона открыта!',rooms[state.room].name+' ждёт обновления.')}render()}
+function renderCollection(){let unlocked=Object.keys(state.unlocked).length;$('collectionCount').textContent=unlocked+' открыто';$('chains').innerHTML=chains.map(c=>{let html=`<div style="margin-bottom:14px"><div style="font-weight:900;font-size:12px;margin-bottom:8px">${c.icon} ${c.name}</div><div class="collection">`;for(let i=1;i<=20;i++){let open=!!state.unlocked[c.id+':'+i];html+=`<div class="collect"><div class="big">${open?c.items[i-1]:'❔'}</div><small>Уровень ${i}</small></div>`}return html+'</div></div>'}).join('')}
+function showModal(icon,title,txt){$('modalIcon').textContent=icon;$('modalTitle').textContent=title;$('modalText').textContent=txt;$('modal').classList.add('show')}
+$('modalOk').onclick=()=>$('modal').classList.remove('show');
+$('generateBtn').onclick=()=>{let i=state.board.findIndex(x=>x?.type==='gen');if(i<0){let free=emptyIndex();if(free<0){toast('Нет места');return}state.board[free]={type:'gen'};toast('Генератор добавлен на поле')}else generateFrom(i);render()};
+$('sellBtn').onclick=()=>{if(state.selected===null||!state.board[state.selected]||state.board[state.selected].type!=='item'){toast('Сначала выбери предмет');return}let obj=state.board[state.selected];state.coins+=obj.level*5;state.board[state.selected]=null;state.selected=null;toast('Предмет продан');render()};
+$('storeBtn').onclick=()=>showModal('📦','Хранилище','Хранилище появится в следующем обновлении. Сейчас можно освободить место, объединяя или продавая предметы.');
+$('sortBtn').onclick=()=>{let found=false;for(let i=0;i<N;i++)for(let j=i+1;j<N;j++){let a=state.board[i],b=state.board[j];if(a&&b&&a.type==='item'&&b.type==='item'&&a.chain===b.chain&&a.level===b.level){state.selected=i;found=true;break}}if(found){render();toast('Подсветили пару для объединения')}else toast('Подходящих пар пока нет')};
+$('refreshOrders').onclick=()=>{if(state.coins<25){toast('Нужно 25 монет');return}state.coins-=25;newOrders();render();toast('Новые гости прибыли')};
+document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+b.dataset.page))});
+load();if(!state.board.some(Boolean)){state.board[24]={type:'gen'};for(let i=0;i<8;i++)addRandom();state.unlocked['kitchen:1']=true;state.unlocked['service:1']=true}if(!state.orders.length)newOrders();render();
+setInterval(()=>{if(state.energy<MAX_ENERGY){state.energy=Math.min(MAX_ENERGY,state.energy+1);$('energy').textContent=state.energy;$('energyText').textContent=state.energy+'/100';$('energyFill').style.width=state.energy+'%';save()}},60000);
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
-</script>
-<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}</script></body></html>
+</script></body></html>
